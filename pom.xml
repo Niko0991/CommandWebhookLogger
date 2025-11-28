@@ -23,49 +23,40 @@
     </repositories>
 
     <dependencies>
-        <!-- Spigot API for 1.21.10 -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.21.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- ProtocolLib API (Installed Locally) -->
         <dependency>
             <groupId>com.comphenix.protocol</groupId>
             <artifactId>ProtocolLib</artifactId>
             <version>5.4.0</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- DiscordSRV (provided, manually place jar in plugins folder) -->
         <dependency>
             <groupId>com.github.DiscordSRV</groupId>
             <artifactId>DiscordSRV</artifactId>
             <version>1.30.0</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- LuckPerms API -->
         <dependency>
             <groupId>net.luckperms</groupId>
             <artifactId>api</artifactId>
             <version>5.4</version>
             <scope>provided</scope>
         </dependency>
-		
 		<dependency>
     <groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
-    <version>2.10.1</version> <!-- Use the latest stable version or one compatible with your server -->
+    <version>2.10.1</version>
     <scope>compile</scope>
 </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Java 17 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -75,8 +66,6 @@
                     <target>17</target>
                 </configuration>
             </plugin>
-
-            <!-- Create jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
