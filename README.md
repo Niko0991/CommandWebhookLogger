@@ -1,5 +1,7 @@
 A Minecraft command logger to a webhook plugin.
 
+Version: 1.0
+
 Plugin install: https://www.spigotmc.org/resources/commandwebhooklogger.130446/
 Support/donate: https://discordapp.com/users/1070356271955451905
 
