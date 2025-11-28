@@ -1,0 +1,60 @@
+# CommandWebhookLogger by Niko099 - config.yml
+# Configure three webhooks (executed / no-permission / unknown-command).
+# Each webhook can have its own embed template and styling.
+# Placeholders available:
+#   %player%         - player name
+#   %command%        - full command string (with leading slash)
+#   %discord_mention% - Discord mention (if linked via DiscordSRV) or "Not linked"
+#   %group%          - LuckPerms primary group (If luckperms is installed)
+#   %error%          - optional error text (not used except if you want)
+# Notes:
+#  - If a webhook URL is empty, that event will not be sent.
+#  - Timestamp can be enabled/disabled per embed template.
+
+webhooks:
+  executed: ""            # webhook URL for executed commands
+  no-permission: ""       # webhook URL for no-permission commands
+  unknown-command: ""     # webhook URL for unknown commands
+
+embed_defaults:     # Changing the templates underneath this will overwrite values in here.
+  author_name: "Command Logs"
+  color: 5814783
+  footer_text: "Server Logs"
+  include_timestamp: true
+  footer_icon_url: ""
+
+templates:
+  executed:
+    title: ":white_check_mark: %player% executed command: %command%"
+    description: "**Discord ID:** %discord_mention%\n**Player:** %player%\n**Group:** %group%"     # Remove discord_mention and group if you do not have Discordsrv/Luckperms installed.
+    color: 43520     # Default green
+    footer: "Executed"
+    include_timestamp: true
+    include_image: false     # Big image underneath all messages
+    image_url: ""
+    include_thumbnail: false     # Smaller image on the right of the embed
+
+  no-permission:
+    title: ":no_entry_sign: %player% attempted command without permission: %command%"
+    description: "**Discord ID:** %discord_mention%\n**Player:** %player%\n**Group:** %group%"     # Remove discord_mention and group if you do not have Discordsrv/Luckperms installed.
+    color: 16711680     # Default red
+    footer: "No permission"
+    include_timestamp: true
+    include_image: false     # Big image underneath all messages
+    image_url: ""
+    include_thumbnail: false     # Smaller image on the right of the embed
+    thumbnail_url: ""
+
+  unknown-command:
+    title: ":warning: %player% attempted unknown command: %command%"
+    description: "**Discord ID:** %discord_mention%\n**Player:** %player%"     # Remove discord_mention and group if you do not have Discordsrv/Luckperms installed.
+    color: 16753920     # Default orange
+    footer: "Unknown command"
+    include_timestamp: true
+    include_image: false     # Big image underneath all messages
+    image_url: ""
+    include_thumbnail: false     # Smaller image on the right of the embed
+    thumbnail_url: ""
+
+wait-ticks-after-execute: 1     # I do not recommend changing this value as it determines the delay of the webhook being sent.
+debug: false     # Only enable if troubleshooting.

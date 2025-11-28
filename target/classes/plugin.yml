@@ -1,0 +1,19 @@
+name: CommandWebhookLogger
+main: com.niko.commandlogger.Main
+version: 1.0
+api-version: 1.21
+description: Logs player commands to configurable Discord webhooks (executed, no-permission, unknown) using packet interception for accuracy.
+author: Niko099
+depend: [ProtocolLib] # ProtocolLib is REQUIRED for packet interception
+softdepend: [LuckPerms, DiscordSRV] # These are optional but used for placeholders
+
+commands:
+  commandwebhooklogger:
+    description: "Main command for CommandWebhookLogger"
+    usage: "/commandwebhooklogger reload"
+    permission: "commandwebhooklogger.reload"
+
+permissions:
+  commandwebhooklogger.reload:
+    description: "Allows reloading the CommandWebhookLogger plugin"
+    default: op
